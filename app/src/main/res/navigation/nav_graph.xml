@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notListeFragment">
+
+    <fragment
+        android:id="@+id/notListeFragment"
+        android:name="Nots.view.NotListeFragment"
+        android:label="fragment_not_liste"
+        tools:layout="@layout/fragment_not_liste">
+        <action
+            android:id="@+id/action_notListeFragment_to_notFragment"
+            app:destination="@id/notFragment">
+            <argument
+                android:name="notId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/notFragment"
+        android:name="Nots.view.NotFragment"
+        android:label="fragment_not"
+        tools:layout="@layout/fragment_not">
+        <argument
+            android:name="notId"
+            app:argType="integer" />
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
